@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Trade Vanta</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+  :root {
+    --primary: #0d1b2a;   /* Dark blue */
+    --secondary: #1b263b; /* Lighter blue */
+    --accent: #00e5ff;    /* Neon cyan */
+    --text-light: #ffffff;
+    --text-muted: #bbbbbb;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--primary);
+    color: var(--text-light);
+  }
+
+  header {
+    background: var(--secondary);
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-bottom: 2px solid var(--accent);
+  }
+
+  /* Reusable button */
+  .btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 20px auto;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background: #00c2d4;
+  }
+
+  /* Slider */
+  .slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .slider-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slider-image {
+    width: 100%;
+    flex-shrink: 0;
+  }
+
+  /* Financing Cards */
+  .financing {
+    padding: 20px;
+    text-align: center;
+  }
+  .financing-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 15px;
+    margin-top: 10px;
+  }
+  .financing-card {
+    background: var(--secondary);
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--accent);
+  }
+  .coin-logo {
+    width: 30px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .financing-card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  .financing-card-yield {
+    font-size: 1.5em;
+    color: var(--accent);
+  }
+  .financing-card-yield span {
+    font-size: 0.8em;
+    color: var(--text-muted);
+  }
+
+  /* Quotation */
+  .quotation {
+    padding: 20px;
+  }
+  .quotation-list {
+    list-style: none;
+    padding: 0;
+  }
+  .quotation-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--secondary);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #333;
+  }
+  .coin-item {
+    display: flex;
+    align-items: center;
+  }
+  .coin-icon {
+    width: 35px;
+    margin-right: 8px;
+  }
+  .coin-change.positive {
+    color: #0f0;
+  }
+  .coin-change.negative {
+    color: #f00;
+  }
+
+  /* Revenue Table */
+  .table-container {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    overflow-x: auto;
+    border-radius: 10px;
+    background: var(--secondary);
+    border: 1px solid var(--accent);
+    padding: 5px;
+    margin: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+  }
+  th {
+    background: var(--accent);
+    color: var(--primary);
+    font-weight: bold;
+  }
+  tbody {
+    display: block;
+    height: 240px;
+    overflow-y: auto;
+  }
+  tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+</style>
+</head>
+<body>
+
+<header>Trade Vanta</header>
+
+<!-- Slider -->
+<section class="slider">
+  <div class="slider-wrapper" id="slider-wrapper">
+    <img src="https://i.postimg.cc/2y3BnkHX/IMG-1986.jpg" class="slider-image" alt="">
+    <img src="https://i.postimg.cc/PqtJmfJz/IMG-1985.jpg" class="slider-image" alt="">
+    <img src="https://i.postimg.cc/vHFV4srX/IMG-1984.jpg" class="slider-image" alt="">
+    <img src="https://i.postimg.cc/Sscm5wnN/IMG-1987.jpg" class="slider-image" alt="">
+  </div>
+</section>
+
+<a href="register.html" class="btn">Get Started</a>
+
+<!-- Financing -->
+<section class="financing">
+  <h2>Financing</h2>
+  <div class="financing-cards">
+    <div class="financing-card">
+      <div class="financing-card-title"><img src="https://i.postimg.cc/JnKfKkHS/IMG-9529.png" class="coin-logo">USDT <span>120days</span></div>
+      <div class="financing-card-yield">63.5%<br><span>yield</span></div>
+    </div>
+    <div class="financing-card">
+      <div class="financing-card-title"><img src="https://i.postimg.cc/JnKfKkHS/IMG-9529.png" class="coin-logo">USDT <span>90days</span></div>
+      <div class="financing-card-yield">52.8%<br><span>yield</span></div>
+    </div>
+    <div class="financing-card">
+      <div class="financing-card-title"><img src="https://i.postimg.cc/JnKfKkHS/IMG-9529.png" class="coin-logo">USDT <span>60days</span></div>
+      <div class="financing-card-yield">30.6%<br><span>yield</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Quotation -->
+<section class="quotation">
+  <h2>Quotation</h2>
+  <ul class="quotation-list">
+    <li>
+      <div class="coin-item"><img src="https://i.ibb.co/nsQFhNC1/IMG-9530.png" class="coin-icon"><span>BTC</span></div>
+      <div class="coin-price">$90,435</div>
+      <div class="coin-change positive">+3.3%</div>
+    </li>
+    <li>
+      <div class="coin-item"><img src="https://i.postimg.cc/63w0qbqN/IMG-9531.png" class="coin-icon"><span>ETH</span></div>
+      <div class="coin-price">$2,239.9</div>
+      <div class="coin-change positive">+3.2%</div>
+    </li>
+    <li>
+      <div class="coin-item"><img src="https://i.postimg.cc/JnKfKkHS/IMG-9529.png" class="coin-icon"><span>USDT</span></div>
+      <div class="coin-price">$1.0007</div>
+      <div class="coin-change positive">+0.05%</div>
+    </li>
+  </ul>
+</section>
+
+<!-- Revenue -->
+<section class="revenue">
+  <h2 style="text-align:center;">Revenue</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr><th>Username</th><th>Amount</th><th>Date</th></tr>
+      </thead>
+      <tbody id="revenueTable"></tbody>
+    </table>
+  </div>
+</section>
+
+  <footer>
+    <p>&copy; 2025 Bit-Digital Mining Online. All Rights Reserved.</p>
+  </footer>
+
+<script>
+  // Slider
+  const sliderWrapper = document.getElementById('slider-wrapper');
+  const images = sliderWrapper.querySelectorAll('.slider-image');
+  let counter = 0;
+
+  function slide() {
+    const slideWidth = images[0].clientWidth;
+    sliderWrapper.style.transform = `translateX(${-slideWidth * counter}px)`;
+  }
+  function nextSlide() {
+    counter = (counter + 1) % images.length;
+    slide();
+  }
+  setInterval(nextSlide, 3000);
+
+  // Revenue Table
+  function generateUsername() {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    return chars[Math.floor(Math.random() * chars.length)] + "*".repeat(Math.floor(Math.random() * 5) + 3) + chars[Math.floor(Math.random() * chars.length)];
+  }
+  function generateAmount() {
+    return (Math.random() * (789000 - 90000) + 90000).toFixed(2);
+  }
+  function getCurrentDate() {
+    return new Date().toISOString().split("T")[0];
+  }
+  function updateTable() {
+    const tableBody = document.getElementById("revenueTable");
+    const row = `<tr><td>${generateUsername()}</td><td>${generateAmount()}</td><td>${getCurrentDate()}</td></tr>`;
+    tableBody.insertAdjacentHTML("afterbegin", row);
+    if (tableBody.rows.length > 10) tableBody.deleteRow(tableBody.rows.length - 1);
+  }
+  for (let i = 0; i < 8; i++) updateTable();
+  setInterval(updateTable, 3000);
+</script>
+
+</body>
+</html>

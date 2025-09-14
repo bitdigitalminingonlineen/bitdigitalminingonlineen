@@ -260,10 +260,36 @@
     const auth = getAuth(app);
 
     const currencySymbols = {
-      USD: '$', EUR: '€', GBP: '£',
-      INR: '₹', CAD: 'C$', AUD: 'A$',
-      NGN: '₦', JPY: '¥'
-    };
+  // Major fiat
+  USD: "$",
+  EUR: "€",
+  GBP: "£",
+  INR: "₹",
+  AUD: "A$",
+  CAD: "C$",
+  JPY: "¥",
+  CNY: "¥",
+  CHF: "CHF",
+
+  // Latin America
+  ARS: "$",   // Argentine Peso
+  BRL: "R$",  // Brazilian Real
+  MXN: "$",   // Mexican Peso
+  CLP: "$",   // Chilean Peso
+  COP: "$",   // Colombian Peso
+  PEN: "S/",  // Peruvian Sol
+  UYU: "$U",  // Uruguayan Peso
+  VES: "Bs.", // Venezuelan Bolívar
+
+  // Crypto
+  BTC: "₿",
+  ETH: "Ξ",
+  USDT: "₮",   // Tether (unofficial)
+  BNB: "BNB",
+  SOL: "◎",
+  DOGE: "Ð",
+  ADA: "₳"
+};
 
     function updateBalanceDisplay(balance, currencyCode) {
       const symbol = currencySymbols[currencyCode] || '$';
